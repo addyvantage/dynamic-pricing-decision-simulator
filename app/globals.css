@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 33% 98%;
+  --foreground: 222 24% 14%;
+  --muted: 210 20% 95%;
+  --muted-foreground: 215 16% 38%;
+  --card: 0 0% 100%;
+  --border: 213 22% 88%;
+  --positive: 158 50% 36%;
+  --caution: 40 85% 42%;
+  --risk: 7 68% 46%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 222 28% 10%;
+    --foreground: 210 28% 94%;
+    --muted: 222 20% 16%;
+    --muted-foreground: 216 15% 72%;
+    --card: 222 22% 13%;
+    --border: 221 17% 26%;
+    --positive: 152 46% 53%;
+    --caution: 40 84% 56%;
+    --risk: 5 79% 62%;
+  }
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at 5% 4%, rgba(60, 96, 133, 0.08), transparent 24%),
+    radial-gradient(circle at 94% 3%, rgba(110, 90, 40, 0.08), transparent 20%),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.surface-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(148, 163, 184, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.5);
+  border-radius: 9999px;
+}
