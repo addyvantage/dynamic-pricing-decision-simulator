@@ -1,7 +1,7 @@
 import { readCsvRecords, toNumber } from "@/lib/data-loaders/csv";
 import type { ScenarioOutcome } from "@/types/scenario";
 
-const PATH = "simulation_engine/output/scenario_outcomes.csv";
+const PATH = "public/data/scenario_outcomes.csv";
 
 export async function loadScenarioOutcomes(): Promise<ScenarioOutcome[]> {
   const rows = await readCsvRecords(PATH);

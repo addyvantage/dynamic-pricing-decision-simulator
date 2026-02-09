@@ -1,7 +1,7 @@
 import { readCsvRecords, toNumber } from "@/lib/data-loaders/csv";
 import type { StrategyScorecard } from "@/types/scorecard";
 
-const PATH = "evaluation_metrics/output/strategy_scorecard.csv";
+const PATH = "public/data/strategy_scorecard.csv";
 
 export async function loadStrategyScorecard(): Promise<StrategyScorecard[]> {
   const rows = await readCsvRecords(PATH);
