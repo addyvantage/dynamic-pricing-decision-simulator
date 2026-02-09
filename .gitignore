@@ -16,3 +16,4 @@ out/
 **/output/*.csv
 simulation_engine/output/
 evaluation_metrics/output/
+.vercel

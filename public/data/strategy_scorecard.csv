@@ -1,0 +1,4 @@
+strategy_name,total_revenue,revenue_lift_vs_baseline_pct,total_forecast_demand,total_orders_completed,pct_demand_lost_capacity,avg_utilization_rate,avg_stress_index,pct_high_risk_rows,pct_medium_or_high_risk_rows,revenue_per_stress_unit
+STATIC_BASELINE,503367.39,0.0,23305.41,22419.92,3.8,0.735,42.33,0.0,0.0,11890.77
+POLICY_RECOMMENDED,526851.69,4.67,24503.4,23328.55,4.79,0.763,43.72,1.39,8.33,12049.33
+AGGRESSIVE_POLICY,526360.31,4.57,24503.4,23269.49,5.04,0.761,43.85,0.69,8.33,12004.88
