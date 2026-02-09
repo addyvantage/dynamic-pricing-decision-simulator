@@ -55,6 +55,9 @@ echo "Copying artifacts..."
 cp simulation_engine/output/scenario_outcomes.csv public/data/
 cp evaluation_metrics/output/strategy_scorecard.csv public/data/
 
+
 echo "==========================================="
 echo "  BUILD PREPARATION COMPLETE"
+echo "  Artifacts in public/data:"
+ls -la public/data
 echo "==========================================="
