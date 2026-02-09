@@ -16,21 +16,23 @@ else
   exit 1
 fi
 
-# Install dependencies into a local venv or just user install if on Vercel
-# On Vercel, we can try to install to the user space or use a venv. 
-# Simpler: install to current environment since it's ephemeral/containerized.
+# Create a temporary virtual environment to avoid PEP 668 errors (externally managed environment)
+# This is safe because Vercel builds are ephemeral.
+echo "Creating virtual environment..."
+python3 -m venv .vercel_venv
+
+# Activate venv
+source .vercel_venv/bin/activate
+
 echo "Installing Python dependencies..."
-python3 -m pip install --upgrade pip
-python3 -m pip install pandas numpy
+pip install --upgrade pip
+pip install pandas numpy
 
 # 2. Run Simulation Pipeline
 echo "Running analytics pipeline..."
-# We reuse the logic from run_pipeline.sh but bypass the venv check if needed, 
-# or just run the python scripts directly since we just installed deps.
 
-PYTHON_COMMAND="python3"
+PYTHON_COMMAND="python" # Uses the venv python
 
-# Steps from run_pipeline.sh
 PIPELINE_STEPS=(
   "data_design/generate_synthetic_data.py"
   "forecasting/forecasting_pipeline.py"
